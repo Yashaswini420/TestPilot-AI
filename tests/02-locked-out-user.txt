@@ -1,0 +1,1 @@
+Go to https://www.saucedemo.com. Log in as locked_out_user with password {{TEST_PASSWORD}}. Verify an error message saying the user has been locked out is shown.

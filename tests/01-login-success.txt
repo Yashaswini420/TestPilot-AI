@@ -1,0 +1,1 @@
+Go to https://www.saucedemo.com. Log in as standard_user with password {{TEST_PASSWORD}}. Verify the Products page opens.

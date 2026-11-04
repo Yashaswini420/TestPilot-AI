@@ -1,0 +1,10 @@
+
+Go to https://www.saucedemo.com. 
+Log in as standard_user with password {{TEST_PASSWORD}}. 
+Add the product "Sauce Labs Backpack" to the cart. 
+Click the cart icon . 
+Click Checkout. 
+On the information page fill First Name as ABCD, Last Name as EFGH and Zip/Postal Code as 990099. 
+Click Continue. 
+Click Finish. 
+Click Back Home 
