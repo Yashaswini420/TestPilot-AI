@@ -7,4 +7,5 @@ Click Checkout.
 On the information page fill First Name as ABCD, Last Name as EFGH and Zip/Postal Code as 990099. 
 Click Continue. 
 Click Finish. 
-Click Back Home 
+Click Back Home.
+And Logout.

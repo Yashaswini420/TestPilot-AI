@@ -1,14 +1,14 @@
-[1] Navigate to the login page to start the test.
+[1] Navigate to the login page
      -> {"action":"goto","url":"https://www.saucedemo.com"}
 [2] Fill username field
      -> {"action":"fill","id":0,"value":"locked_out_user"}
 [3] Fill password field
      -> {"action":"fill","id":1,"value":"{{TEST_PASSWORD}}"}
-[4] Click the login button to submit credentials
+[4] Click login to trigger locked out error
      -> {"action":"click","id":2}
-[5] Check that the locked out error message is displayed
+[5] Check that the locked out error message is displayed.
      -> {"action":"expect_text","text":"Epic sadface: Sorry, this user has been locked out."}
-[6] The expected locked out error text is present, so the test passes.
+[6] The expected locked out error is visible, so test passes.
      -> {"action":"finish","result":"pass","reason":"Error message displayed as expected"}
 
 PASS: Error message displayed as expected

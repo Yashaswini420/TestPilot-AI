@@ -1,12 +1,12 @@
 [1] Navigate to the login page
      -> {"action":"goto","url":"https://www.saucedemo.com"}
-[2] Fill in the username field with standard_user
+[2] Fill username, then password, then click login
      -> {"action":"fill","id":0,"value":"standard_user"}
-[3] Fill the password field with the placeholder value
+[3] Fill password field with placeholder
      -> {"action":"fill","id":1,"value":"{{TEST_PASSWORD}}"}
 [4] Click the login button to submit credentials
      -> {"action":"click","id":2}
-[5] Check that the Products page is displayed
+[5] Verify that the Products page is displayed after login
      -> {"action":"expect_text","text":"Products"}
 [6] Products text is visible, test passed
      -> {"action":"finish","result":"pass","reason":"Products page displayed"}

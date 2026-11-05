@@ -1,61 +1,37 @@
 [1] Navigate to the login page to start the test.
      -> {"action":"goto","url":"https://www.saucedemo.com"}
-[2] Fill username field
+[2] Enter username
      -> {"action":"fill","id":0,"value":"standard_user"}
 [3] Fill password field before submitting login
      -> {"action":"fill","id":1,"value":"{{TEST_PASSWORD}}"}
 [4] Click the login button to submit credentials
      -> {"action":"click","id":2}
-[5] Click the Add to cart button for Sauce Labs Backpack
-     -> {"action":"click","id":11}
-[6] Click the cart icon to view cart contents
-     -> {"action":"click","id":7}
-[7] Proceed to checkout from cart page
+[5] Verify product is listed before adding to cart
+     -> {"action":"expect_text","text":"Sauce Labs Backpack"}
+[6] Click Add to cart for Sauce Labs Backpack
      -> {"action":"click","id":5}
-[8] Fill First Name field
+[7] Click the cart icon to view cart
+     -> {"action":"click","id":1}
+[8] Proceed to checkout from cart page
+     -> {"action":"click","id":5}
+[9] Fill First Name field
      -> {"action":"fill","id":2,"value":"ABCD"}
-[9] Fill last name, zip code, then continue
+[10] Fill the Last Name field
      -> {"action":"fill","id":3,"value":"EFGH"}
-[10] Fill zip code then continue
+[11] Fill the Zip/Postal Code field
      -> {"action":"fill","id":4,"value":"990099"}
-[11] Click the Continue button to proceed to the next checkout step
+[12] Click Continue to proceed to next step
      -> {"action":"click","id":6}
-[12] Click Finish to complete checkout
+[13] Click Finish to complete the order
      -> {"action":"click","id":4}
-[13] Click Back Home to return to inventory page
+[14] Click Back Home to return to products page before logging out
      -> {"action":"click","id":2}
-[14] Click the cart icon to view cart contents
+[15] Click the cart icon to view cart contents
      -> {"action":"click","id":1}
-[15] Click Checkout to proceed to next step
-     -> {"action":"click","id":3}
-[16] Click Continue to proceed to the next checkout step
-     -> {"action":"click","id":6}
-[17] Fill missing first name to clear the error
-     -> {"action":"fill","id":2,"value":"ABCD"}
-[18] Click Continue to proceed to next checkout step
-     -> {"action":"click","id":7}
-[19] Click Continue to proceed to next checkout step
-     -> {"action":"click","id":7}
-[20] Fill missing last name then continue
-     -> {"action":"fill","id":3,"value":"EFGH"}
-[21] Fill zip code then continue to finish checkout
-     -> {"action":"fill","id":4,"value":"990099"}
-[22] Click Continue to proceed to next checkout step
-     -> {"action":"click","id":7}
-[23] Click Finish to complete checkout
-     -> {"action":"click","id":3}
-[24] Click the Back Home button to return to products page
-     -> {"action":"click","id":2}
-[25] Click the cart icon to view cart
-     -> {"action":"click","id":1}
-[26] Click the Checkout button to proceed to the information page again
-     -> {"action":"click","id":3}
-[27] Click Continue to go to the next checkout step
-     -> {"action":"click","id":6}
-[28] First name field is empty, need to fill it before continuing.
-     -> {"action":"fill","id":2,"value":"ABCD"}
-[29] Click Continue to proceed to next checkout step
-     -> {"action":"click","id":7}
+[16] Open the side menu to access logout
+     -> {"action":"click","id":0}
+[17] Open the side menu to access the Logout link
+     -> {"action":"click","id":0}
      FAILED: locator.click: Target page, context or browser has been closed
 node:internal/modules/run_main:107
     triggerUncaughtException(
