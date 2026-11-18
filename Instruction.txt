@@ -1,0 +1,76 @@
+TestPilot-AI Instructions
+
+1. Purpose
+- This project uses Playwright + an LLM-driven agent to execute web UI tests written in plain English.
+
+2. Prerequisites
+- Install Node.js 18+ (recommended: Node.js 20+)
+- Install npm
+- Have a valid LLM API endpoint and API key
+
+3. Required environment variables
+- LLM_URL = API endpoint for the LLM
+- LLM_MODEL = model name to use
+- LLM_API_KEY = API key for the LLM
+- TEST_PASSWORD = password used in the SauceDemo tests
+- HEADLESS = optional, set to 1 to run browser in headless mode
+
+4. Install dependencies
+- Run: npm install
+
+5. How the framework works
+- observe.js scans the current page and assigns temporary agent ids to visible interactive elements
+- llm.js sends the current page state and test goal to the LLM
+- act.js performs one browser action returned by the LLM
+- agent.js loops through observe -> think -> act until pass/fail
+- runner.js runs all .txt tests from the tests folder
+
+6. Running checks
+- Run observe check: node observe-check.js
+- Run action check: node act-check.js
+- Run LLM check: node llm-check.js
+- Run LLM agent check: node llm-agent-check.js
+
+7. Running one AI test directly
+- Command:
+  node agent.js "Go to https://www.saucedemo.com and log in as standard_user with password {{TEST_PASSWORD}}"
+
+8. Running test suite
+- Put plain-English test files inside the tests folder
+- Run all tests:
+  node runner.js
+- Run filtered tests:
+  node runner.js login
+
+9. Test file rules
+- Store each test as a .txt file inside tests/
+- Write steps in plain English
+- Use placeholders like {{TEST_PASSWORD}} for secrets
+- The password placeholder is replaced from environment variables at runtime
+
+10. Supported agent actions
+- goto
+- click
+- fill
+- select
+- press
+- hover
+- wait
+- expect_text
+- expect_url
+- finish
+
+11. Important limitations
+- Element ids are generated dynamically and change on every observation step
+- The agent only performs one action at a time
+- expect_text should match text already visible on the page
+- Complex flows may require prompt or action improvements
+
+12. Output files
+- Execution logs are saved in the results/ folder
+- Failure screenshots may be saved as fail-step-<number>.png
+
+13. Recommended cleanup
+- Do not commit node_modules/
+- Consider adding a .env.example file
+- Consider adding npm scripts for easier execution
